@@ -37,7 +37,7 @@ export default function Home() {
                                 <CardDescription>Request free SOL tokens for testing & development on devnet/testnet to cover txn fee</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <Button onClick={() => navigate('/airdrop')}>Get Started</Button>
+                                <Button onClick={() => navigate('/airdrop-solana')}>Get Started</Button>
                             </CardContent>
                         </Card>
 
@@ -59,7 +59,7 @@ export default function Home() {
                                 <CardDescription>Send SOL to Any Wallet with ease</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <Button onClick={() => navigate('/send')}>Get Started</Button>
+                                <Button onClick={() => navigate('/send-solana')}>Get Started</Button>
                             </CardContent>
                         </Card>
                     </div>

@@ -9,17 +9,18 @@ import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 import '@solana/wallet-adapter-react-ui/styles.css';
-import { useMemo } from 'react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { clusterApiUrl } from '@solana/web3.js';
+import NotFound from './components/NotFound';
+// import { useMemo } from 'react';
+// import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+// import { clusterApiUrl } from '@solana/web3.js';
 
 function App() {
   
-  const network = WalletAdapterNetwork.Devnet;
+  // const network = WalletAdapterNetwork.Devnet;
 
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   return (
-    <ConnectionProvider endpoint={endpoint}>
+    <ConnectionProvider endpoint={""}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className="w-screen min-h-screen text-foreground flex flex-col items-between">
@@ -32,8 +33,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/generateToken" element={<GenerateToken />} />
-              <Route path="/airdrop" element={<Airdrop />} />
-              <Route path="/send" element={<Send />} />
+              <Route path="/airdrop-solana" element={<Airdrop />} />
+              <Route path="/send-solana" element={<Send />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </WalletModalProvider>
