@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Input } from "./ui/input"
 import { Button } from "./ui/button"
@@ -18,7 +18,28 @@ export default function Send() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (!wallet.connected) {
+      toast({
+        title: "Warning",
+        description: "Wallet disconnected! Please Connect your wallet.",
+        variant: "destructive",
+      });
+      navigate('/');
+    }
+  }, [wallet.connected, navigate]);
+
+
   const handleSend = async () => {
+    if (!wallet.connected) {
+      toast({
+        title: "Warning",
+        description: "Wallet disconnected. Please select a wallet.",
+        variant: "destructive",
+      });
+      navigate('/');
+      return;
+    }
     if (!Recipientaddress || !amount) {
       toast({
         title: "Error",
@@ -54,14 +75,11 @@ export default function Send() {
     // return;
     navigate('/');
   }
-  
 
-    
-   
   }
 
   return (
-   <>
+   <div className="mt-16">
      {
         loading && (
           <div className="w-full max-w-md mx-auto my-auto flex justify-center">
@@ -72,7 +90,7 @@ export default function Send() {
      {
       !loading &&(
         <div className="w-full max-w-md mx-auto">
-          <Card >
+          <Card className="shadow-lg shadow-gray-50">
       <CardHeader>
         <CardTitle>Send Solana</CardTitle>
         <CardDescription>Enter recipient address to transfer solana</CardDescription>
@@ -112,6 +130,6 @@ export default function Send() {
         </div>
       )
      }
-   </>
+   </div>
   )
 }

@@ -3,7 +3,7 @@ import { Moon, Sun } from "lucide-react"
 import { useState, useEffect } from 'react'
 import { Button } from './ui/button'
 
-export default function ToggleTheme() {
+export default function ToggleTheme({a,b}) {
         const [theme, setTheme] = useState('light')
         useEffect(() => {
           const savedTheme = localStorage.getItem('theme') || 'light'
@@ -24,7 +24,9 @@ export default function ToggleTheme() {
             size="icon"
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="fixed top-4 right-4 z-10"
+            // className="fixed top-4 right-4 z-10"
+            className={`${a} md:${b}`}
+            
           >
             {theme === 'dark' ? <Sun className="h-[1.2rem] w-[1.2rem]" /> : <Moon className="h-[1.2rem] w-[1.2rem]" />}
           </Button>
