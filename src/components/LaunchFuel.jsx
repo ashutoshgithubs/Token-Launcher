@@ -103,7 +103,7 @@ export default function LaunchFuel() {
   return (
     <Card className="w-full max-w-md mx-auto mt-16">
       <CardHeader>
-        <CardTitle>Send SOL to Admin (Dev Mode)</CardTitle>
+        <CardTitle>Send SOL to Creator (Dev Mode)</CardTitle>
         <CardDescription>Support the project by sending any amount of SOL (dev mode)</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">

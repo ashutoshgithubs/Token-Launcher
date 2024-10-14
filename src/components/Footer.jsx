@@ -3,6 +3,7 @@ import { Github, Twitter, Globe } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
+  const tweeter = import.meta.env.VITE_Tweeter;
   return (
     <footer className="bg-background text-foreground border-t mt-4">
       <div className="container mx-auto px-4 py-8">
@@ -17,7 +18,7 @@ export default function Footer() {
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="https://twitter.com" target="_blank" className="text-muted-foreground hover:text-primary">
+              <a href={tweeter} target="_blank" className="text-muted-foreground hover:text-primary">
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </a>
@@ -48,19 +49,19 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/docs" className="text-muted-foreground hover:text-primary">
+                <a href="https://spl.solana.com/" target = "_blank"  className="text-muted-foreground hover:text-primary">
                   Documentation
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-primary">
+                <a href="#faq" className="text-muted-foreground hover:text-primary">
                   FAQ
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/support" className="text-muted-foreground hover:text-primary">
+                <a href="#support" className="text-muted-foreground hover:text-primary">
                   Support
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

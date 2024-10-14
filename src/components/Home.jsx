@@ -6,6 +6,8 @@ import SuperSection from './SuperSection';
 import Footer from './Footer';
 import BuyCoffee from './BuyCoffee';
 import ToolCards from './ToolCards';
+import FaqSection from './FaqSection';
+import Contact from './Contact';
 
 export default function Home() {
     
@@ -16,9 +18,13 @@ export default function Home() {
                 <HeroSection/>
                 <ToolCards/>
                 <BuyCoffee/>
+                <FaqSection/>
+                <Contact/>
                 <CardFooter>
                     <Footer/>
-                </CardFooter>
+                </CardFooter> 
+               
+                
             {/* )} */}
         </div>
     );

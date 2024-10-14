@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 export default function BuyCoffee() {
  const navigate = useNavigate();
   return (
-    <div className="relative flex flex-col items-center text-center p-8  overflow-hidden">
+    <div id="support" className="relative flex flex-col items-center text-center p-8  overflow-hidden mt-10">
       {/* Animated stars background */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(50)].map((_, i) => (
