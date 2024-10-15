@@ -30,7 +30,7 @@ export default function Contact() {
       });
       setButtonText("✔ Launched");
       toast({
-        title: "Message Launched into cosmos!",
+        title: "Message Launched!",
         description: "Your message has been sent to the creator. Thank you!",
         
       });
@@ -43,7 +43,7 @@ export default function Contact() {
     } catch (error) {
         toast({
             title: "Failed",
-            description: "Too much traffic in the cosmos. Try after some time..",
+            description: "Too many traffic. Try after some time..",
             variant: "destructive",
           });
       // console.log(error.message);
