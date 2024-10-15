@@ -13,7 +13,6 @@ import NotFound from './components/NotFound';
 import Balance from './components/Balance';
 import Home from './components/Home';
 import LaunchFuel from './components/LaunchFuel';
-import { Bipul } from './components/bipul';
 import ViewTokens from './components/ViewTokens';
 
 function App() {
@@ -116,7 +115,6 @@ function App() {
                 <Route path="/generate-token" element={<GenerateToken />} />
                 <Route path="/airdrop-solana" element={<Airdrop />} />
                 <Route path="/send-solana" element={<Send />} />
-                <Route path="/bip" element={<Bipul />} />
 
                 <Route path="/launch-fuel" element={<LaunchFuel />} />
                 <Route path="/view-tokens" element={<ViewTokens />} />
