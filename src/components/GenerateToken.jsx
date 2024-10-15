@@ -50,7 +50,7 @@ export default function GenerateToken() {
         description: 'Image uploaded successfully!',
       });
       setLoading("Upload Image");
-      console.log(data.secure_url);
+      // console.log(data.secure_url);
       setImage(data.secure_url); 
       // console.log(response);
       // console.log(image);
@@ -97,7 +97,7 @@ export default function GenerateToken() {
     try {
       const mintKeypair = Keypair.generate();
       let metadataUri = await createAndUploadMetadata(name, symbol, decimals, image);
-    console.log(metadataUri);
+    // console.log(metadataUri);
 
       if (!metadataUri) {
         toast({
@@ -147,8 +147,8 @@ export default function GenerateToken() {
         transaction.partialSign(mintKeypair);
 
         const res = await wallet.sendTransaction(transaction, connection);
-        console.log(res+'\n');
-        console.log(transaction);
+        // console.log(res+'\n');
+        // console.log(transaction);
         toast({
           title: 'Token Mint',
           description: `Token mint created at ${mintKeypair.publicKey.toBase58()}`,
@@ -162,7 +162,7 @@ export default function GenerateToken() {
           TOKEN_2022_PROGRAM_ID,
       );
 
-      console.log("AT: ",associatedToken.toBase58())
+      // console.log("AT: ",associatedToken.toBase58())
 
       const transaction2 = new Transaction().add(
           createAssociatedTokenAccountInstruction(
@@ -173,18 +173,18 @@ export default function GenerateToken() {
               TOKEN_2022_PROGRAM_ID,
           )
       );
-      console.log("Txn2: ", transaction2)
+      // console.log("Txn2: ", transaction2)
       const res2 = await wallet.sendTransaction(transaction2, connection);
-      console.log("RES2: ", res2)
+      // console.log("RES2: ", res2)
 
       const transaction3 = new Transaction().add(
         createMintToInstruction(mintKeypair.publicKey, associatedToken, publicKey, supply * Math.pow(10, decimals), [], TOKEN_2022_PROGRAM_ID)
       )
 
-      console.log("Txn3: ", transaction3)
+      // console.log("Txn3: ", transaction3)
      
       const res3 = await wallet.sendTransaction(transaction3, connection);
-      console.log("RES3: ", res3)
+      // console.log("RES3: ", res3)
 
       toast({
         title: 'Congratulations!',
@@ -199,7 +199,7 @@ export default function GenerateToken() {
       setDescription('');
       setImage(null);
     } catch (error) {
-      console.log('Error creating token:', error);
+      // console.log('Error creating token:', error);
       toast({
         title: 'Error',
         description: 'There was an error creating your token. Please try again.',

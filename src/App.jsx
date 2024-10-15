@@ -54,7 +54,7 @@ function App() {
           <div className="w-screen min-h-screen flex flex-col">
 
             {/* NAVBAR */}
-            <nav className="fixed top-0 left-0 w-full flex h-16 items-center justify-center bg-gray-1000 shadow-yellow-50 shadow-2xl">
+            <nav className="fixed top-0 left-0 w-full flex h-16 items-center justify-center bg-gray-900 shadow-yellow-50 shadow-2xl z-50">
               <div className="flex w-11/12 max-w-maxContent items-center justify-between">
                 
              
@@ -65,7 +65,7 @@ function App() {
                 {/* Let's make a Hamburger for Mobile View */}
                 <button
                   ref={buttonRef}
-                  className="block md:hidden focus:outline-none"
+                  className="block md:hidden focus:outline-none text-white"
                   onClick={toggleDropdown}
                   aria-label="Toggle navigation menu"
                   aria-expanded={isDropdownOpen}
@@ -76,12 +76,12 @@ function App() {
                 </button>
 
                 <div className="hidden md:flex gap-x-6">
-                  <Link to="/" className="hover:text-indigo-400 transition-colors">Home</Link>
+                  <Link to="/" className="hover:text-indigo-400 transition-colors text-white">Home</Link>
                   {location.pathname === "/" && ( 
                     <>
-                      <a href="#tools" className="hover:text-indigo-400 transition-colors">Tools</a>
-                      <a href="#support" className="hover:text-indigo-400 transition-colors">Fuel my Rocket</a>
-                      <a href="#faq" className="hover:text-indigo-400 transition-colors">FAQs</a>
+                      <a href="#tools" className="hover:text-indigo-400 transition-colors text-white">Tools</a>
+                      <a href="#support" className="hover:text-indigo-400 transition-colors text-white">Fuel my Rocket</a>
+                      <a href="#faq" className="hover:text-indigo-400 transition-colors text-white">FAQs</a>
                     </>
                   )}
                 </div>
@@ -96,12 +96,12 @@ function App() {
               {isDropdownOpen && (
                 <div ref={dropdownRef} className="absolute top-16 left-0 w-full bg-slate-600 md:hidden shadow-lg">
                   <div className="flex flex-col items-center space-y-4 py-4 font-semibold">
-                    <Link to="/" className="hover:text-indigo-400 transition-colors" onClick={() => setIsDropdownOpen(false)}>Home</Link>
+                    <Link to="/" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>Home</Link>
                     {location.pathname === "/" && ( 
                       <>
-                        <a href="#tools" className="hover:text-indigo-400 transition-colors" onClick={() => setIsDropdownOpen(false)}>Tools</a>
-                        <a href="#support" className="hover:text-indigo-400 transition-colors" onClick={() => setIsDropdownOpen(false)}>Fuel my Rocket</a>
-                        <a href="#faq" className="hover:text-indigo-400 transition-colors" onClick={() => setIsDropdownOpen(false)}>FAQs</a>
+                        <a href="#tools" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>Tools</a>
+                        <a href="#support" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>Fuel my Rocket</a>
+                        <a href="#faq" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>FAQs</a>
                       </>
                     )}
                     <ToggleTheme a="flex" b="hidden" />

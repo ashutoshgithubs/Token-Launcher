@@ -16,7 +16,8 @@ export default function Contact() {
   const emailBackend = import.meta.env.VITE_Email;
 
 
-  const handleSubmit = async() => {
+  const handleSubmit = async(e) => {
+    e.preventDefault();
     setButtonText("Launching...");
     let response;
     try {
@@ -45,7 +46,7 @@ export default function Contact() {
             description: "Too much traffic in the cosmos. Try after some time..",
             variant: "destructive",
           });
-      console.log(error.message);
+      // console.log(error.message);
     }
   }
 
