@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from "../assets/solvdo - Trim.mp4";
-
+import placeholderImage from "../assets/sol.jpeg"
 export default function SuperSection() {
   return (
     <div className="hero-section py-10 px-8">
@@ -23,8 +23,8 @@ export default function SuperSection() {
       </div>
 
       <div className="lg:w-1/2 mt-10 lg:mt-0">
-          <div className="mx-3 my-12 shadow-[0_0_30px_0] shadow-[#0C6A87]border rounded-3xl ">
-          <video muted loop autoPlay className='border rounded-3xl'>
+          <div className="mx-3 my-12 shadow-[0_0_30px_0] shadow-[#0C6A87]border rounded-3xl relative">
+          <video muted loop autoPlay preload="auto" poster={placeholderImage} className="border rounded-3xl">
             <source src={Banner} type="video/mp4" />
           </video>
         </div>
