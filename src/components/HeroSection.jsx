@@ -33,14 +33,16 @@ export default function HeroSection() {
             // 2nd part
             codeColor={"text-yellow-25"}
             codePart={`import nacl from "tweetnacl";
-            import { mnemonicToSeedSync } from "bip39";
-            import { derivePath } from "ed25519-hd-key";
-            import { Keypair } from "@solana/web3.js";
-            const seed = mnemonicToSeedSync(mnemonic);
+            import {Helmet} from "react-helmet";
+            import {Transaction} from "@solana/web3.js"
+            import {pack} from "@solana/spl-token-metadata"
+            const wallet = useWallet();
+            const {connection} = useConnection();
+            const address = wallet.publicKey;
+            const navigate = useNavigate();
             const path = m/44'/501'/1'/0';
-            const derivedSeed = derivePath(path, seed.toString("hex")).key;
-            const privateKey = nacl.sign.keyPair.fromSeed(derivedSeed).secretKey;
-            Keypair.fromSecretKey(privateKey).publicKey.toBase58();
+            const connected = wallet.connected;
+            
           `}
             backgroundGradient={<div className="codeblock1 absolute"></div>}
           />

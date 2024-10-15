@@ -68,8 +68,11 @@ export default function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Solana Token Launchpad. All rights reserved.
+            © 2024 launchpadsolana-token. All rights reserved.
           </p>
+          <p className="text-sm text-muted-foreground mt-2 md:mt-1">
+              Designed & developed by Ashutosh Kumar
+            </p>
           <div className="flex items-center mt-4 md:mt-0">
             <Globe className="h-5 w-5 mr-2 text-muted-foreground" />
             <select className="bg-background text-foreground border-none focus:ring-0">

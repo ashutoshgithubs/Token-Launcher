@@ -9,6 +9,7 @@ import { TOKEN_2022_PROGRAM_ID, createInitializeMintInstruction, getMintLen, Ext
 import { createInitializeInstruction,pack } from '@solana/spl-token-metadata';
 import { RxCross2 } from "react-icons/rx";
 import { UploadClient } from "@uploadcare/upload-client";
+import { FaSpinner } from 'react-icons/fa';
 
 
 
@@ -44,7 +45,7 @@ export default function GenerateToken() {
         body: formData,
       });
       const data = await response.json();
-      setLoading(false);
+      setLoading("Uploaded");
       toast({
         title: 'Image Uploaded',
         description: 'Image uploaded successfully!',
@@ -55,7 +56,7 @@ export default function GenerateToken() {
       // console.log(response);
       // console.log(image);
     } catch (error) {
-      setLoading(false);
+      setLoading("Upload Image");
       console.error('Image upload failed:', error);
       toast({
         title: 'Error',
@@ -95,6 +96,7 @@ export default function GenerateToken() {
     }
 
     try {
+      setBtnText("Creating...")
       const mintKeypair = Keypair.generate();
       let metadataUri = await createAndUploadMetadata(name, symbol, decimals, image);
     // console.log(metadataUri);
@@ -192,6 +194,7 @@ export default function GenerateToken() {
       });
 
       // Reset form
+      setBtnText("Create Token")
       setName('');
       setSymbol('');
       setDecimals('');
@@ -200,6 +203,7 @@ export default function GenerateToken() {
       setImage(null);
     } catch (error) {
       // console.log('Error creating token:', error);
+      setBtnText("Create Token")
       toast({
         title: 'Error',
         description: 'There was an error creating your token. Please try again.',
@@ -268,10 +272,13 @@ export default function GenerateToken() {
       </div>
 
       <Button
-        onClick={createToken}
-        className="w-full mt-6 bg-blue-600 hover:bg-blue-700"
-      >
-        {btnText}
+          onClick={createToken}
+          className="w-full mt-6 bg-blue-600 hover:bg-blue-700">
+          {btnText === "Creating..." ? (
+            <FaSpinner className="animate-spin text-3xl text-white mb-3 mt-2" />
+          ) : (
+            btnText
+          )}
       </Button>
     </div>
   );
