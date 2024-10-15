@@ -14,6 +14,7 @@ import Balance from './components/Balance';
 import Home from './components/Home';
 import LaunchFuel from './components/LaunchFuel';
 import ViewTokens from './components/ViewTokens';
+import {Helmet} from "react-helmet";
 
 function App() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -51,6 +52,37 @@ function App() {
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className="w-screen min-h-screen flex flex-col">
+
+              {/* HELMET */}
+
+            <Helmet>
+              
+              <title>SOL Token Launchpad | Create and Launch Solana Tokens Easily</title>
+              <meta name="description" content="Launch your own Solana tokens effortlessly using our SOL Token Launchpad. Secure, fast, and decentralized Web3 platform." />
+              <meta name="keywords" content="Solana, Token Launchpad, Web3, Blockchain, Token Creation, Cryptocurrency" />
+              <meta name="author" content="Ashutosh Kumar" />
+              <meta property="og:title" content="SOL Token Launchpad - Create and Launch Solana Tokens" />
+              <meta property="og:description" content="Easily create and launch Solana tokens on our secure Web3 token platform." />
+              <meta property="og:image" content="https://i.ibb.co/fXCNCCh/SOLANA-TOKEN.png" />
+              <meta property="og:url" content="https://launchpadsolana-tokens.vercel.app/" />
+              <meta property="og:type" content="website" />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:title" content="SOL Token Launchpad - Solana Token Creation" />
+              <meta name="twitter:description" content="Launch your Solana tokens with our easy-to-use Web3 platform." />
+              <meta name="twitter:image" content="https://i.ibb.co/fXCNCCh/SOLANA-TOKEN.png" />
+              <meta name="robots" content="index, follow" />
+              <link rel="canonical" href="https://launchpadsolana-tokens.vercel.app/" />
+              <script type="application/ld+json">
+                {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "WebSite",
+                  "name": "SOL Token Launchpad",
+                  "url": "https://launchpadsolana-tokens.vercel.app/",
+                  "description": "Launch Solana tokens securely and quickly with our decentralized Web3 platform."
+                })}
+              </script>
+            </Helmet>
+
 
             {/* NAVBAR */}
             <nav className="fixed top-0 left-0 w-full flex h-16 items-center justify-center bg-gray-900 shadow-yellow-50 shadow-2xl z-50">
