@@ -24,7 +24,7 @@ export default function SuperSection() {
 
       <div className="lg:w-1/2 mt-10 lg:mt-0">
           <div className="mx-3 my-12 shadow-[0_0_30px_0] shadow-[#0C6A87]border rounded-3xl relative">
-          <video muted loop autoPlay preload="auto" poster={placeholderImage} className="border rounded-3xl">
+          <video muted loop autoPlay preload="auto" poster={placeholderImage} className="border rounded-3xl w-full h-full object-cover ">
             <source src={Banner} type="video/mp4" />
           </video>
         </div>
