@@ -48,6 +48,15 @@ export default function ToolCards() {
             navigate("/view-tokens");
         }
     }
+    function handleLiquidity() {
+        if (!connected) {
+            alert("Please connect your wallet");
+            navigate("/");
+        } else {
+            alert("This feature is Under development. It will be available soon!")
+            // navigate("/view-tokens");
+        }
+    }
 
     return (
         <div id="tools" className="max-w-6xl mx-auto">
@@ -133,6 +142,17 @@ export default function ToolCards() {
             </CardHeader>
             <CardContent>
                 <Button onClick={handleViewTokens} >Get Started</Button>
+            </CardContent>
+        </Card>
+    </SwiperSlide>
+    <SwiperSlide>
+        <Card className="shadow-sm hover:shadow-md transition-shadow duration-300 shadow-slate-400 hover:scale-105">
+            <CardHeader>
+                <CardTitle>Liquidity Pools</CardTitle>
+                <CardDescription>Contribute assets to facilitate trading.</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <Button onClick={handleLiquidity} >Get Started</Button>
             </CardContent>
         </Card>
     </SwiperSlide>
