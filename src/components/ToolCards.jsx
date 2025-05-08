@@ -64,22 +64,22 @@ export default function ToolCards() {
         }
     }
 
-    function handleLiquidity() {
-        if (!connected) {
-            alert("Please connect your wallet");
-            navigate("/");
-        } else {
-            alert("This feature is under development. It will be available soon!");
-        }
-    }
-    function handleSwap() {
-        if (!connected) {
-            alert("Please connect your wallet");
-            navigate("/");
-        } else {
-            alert("This feature is under development. It will be available soon!");
-        }
-    }
+    // function handleLiquidity() {
+    //     if (!connected) {
+    //         alert("Please connect your wallet");
+    //         navigate("/");
+    //     } else {
+    //         alert("This feature is under development. It will be available soon!");
+    //     }
+    // }
+    // function handleSwap() {
+    //     if (!connected) {
+    //         alert("Please connect your wallet");
+    //         navigate("/");
+    //     } else {
+    //         alert("This feature is under development. It will be available soon!");
+    //     }
+    // }
 
     const cards = [
         {
@@ -102,16 +102,16 @@ export default function ToolCards() {
             description: "Tokens associated with the linked account.",
             action: handleViewTokens,
         },
-        {
-            title: "Liquidity Pools",
-            description: "Contribute assets to facilitate trading.",
-            action: handleLiquidity,
-        },
-        {
-            title: "Token Swap",
-            description: "Trade Solana effortlessly",
-            action: handleSwap,
-        }
+        // {
+        //     title: "Liquidity Pools",
+        //     description: "Contribute assets to facilitate trading.",
+        //     action: handleLiquidity,
+        // },
+        // {
+        //     title: "Token Swap",
+        //     description: "Trade Solana effortlessly",
+        //     action: handleSwap,
+        // }
     ];
 
     return (
