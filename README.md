@@ -1,8 +1,105 @@
-# React + Vite
+# 🚀 Solana Token Launchpad (dApp)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Solana Token Launchpad**, a decentralized application (dApp) built on the Solana blockchain.  
+This platform allows users to easily create, manage, and transfer tokens — **no coding required**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
+
+- 🔗 **Wallet Connection**
+  - Connect using Phantom Backpack or MetaMask wallet
+  - Supports Devnet/Testnet for safe experimentation
+
+- 🪙 **Create & Manage Tokens**
+  - Create your own tokens in a few simple steps
+  - Mint additional tokens anytime
+
+- 💸 **Airdrop SOL**
+  - Instantly airdrop SOL to your wallet (Devnet/Testnet)
+  - Use it for transaction fees
+
+- 📤 **Send SOL**
+  - Send SOL to any wallet using public key
+
+- 📊 **Token Dashboard**
+  - View all created tokens
+  - Track total supply and circulation
+
+---
+
+## 🛠 Tech Stack
+
+- ⚛️ Frontend: React.js / Next.js  
+- 🎨 Styling: Tailwind CSS  
+- 🔗 Blockchain: Solana Web3.js  
+- 🌐 Wallets: Phantom, Backpack or MetaMask  
+
+---
+
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ashutoshgithubs/Token-Launcher.git
+cd Token-Launcher
+```
+
+### 2. Install Dependencies
+```bash
+npm install 
+```
+
+### 3.
+```bash
+npm run dev
+```
+
+---
+## ⚠️ Important Notes
+- Always use Devnet/Testnet while testing
+- Do NOT use real funds unless fully verified
+- Ensure your wallet is connected before performing actions
+---
+
+
+## 🤝 Contributing
+We welcome contributions from everyone! 💙
+
+### Steps to Contribute:
+1. Fork the repository
+
+2. Create a new branch
+```bash
+git checkout -b feature/your-feature-name
+```
+3. Make your changes
+
+4. Commit your changes
+```bash
+git commit -m "Add your message"
+```
+
+5. Push to your branch
+```bash
+git push origin feature/your-feature-name
+```
+
+6. Open a Pull Request 🚀
+
+
+---
+
+
+## 📬 Contact
+If you have any questions or suggestions, feel free to reach out!
+
+---
+
+
+## ⭐ Show Your Support
+
+If you like this project, please ⭐ the repo!
+
