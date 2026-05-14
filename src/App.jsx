@@ -14,13 +14,13 @@ import Balance from './components/Balance';
 import Home from './components/Home';
 import LaunchFuel from './components/LaunchFuel';
 import ViewTokens from './components/ViewTokens';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
-  const location = useLocation();  
+  const location = useLocation();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(prev => !prev);
@@ -46,17 +46,17 @@ function App() {
   }, [isDropdownOpen]);
 
   const endpoints = import.meta.env.VITE_ENDPOINT;
-  
+
   return (
     <ConnectionProvider endpoint={endpoints}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
-          <div className="w-screen min-h-screen flex flex-col">
+          <div className="w-full min-h-screen flex flex-col">
 
-              {/* HELMET */}
+            {/* HELMET */}
 
             <Helmet>
-              
+
               <title>SOL Token Launchpad | Create and Launch Solana Tokens Easily</title>
               <meta name="description" content="Launch your own Solana tokens effortlessly using our SOL Token Launchpad. Secure, fast, and decentralized Web3 platform." />
               <meta name="keywords" content="Solana, Token Launchpad, Web3, Blockchain, Token Creation, Cryptocurrency" />
@@ -87,12 +87,12 @@ function App() {
             {/* NAVBAR */}
             <nav className="fixed top-0 left-0 w-full flex h-16 items-center justify-center bg-gray-900 shadow-yellow-50 shadow-2xl z-50">
               <div className="flex w-11/12 max-w-maxContent items-center justify-between">
-                
-             
+
+
                 <Link to="/">
                   <img src={logo} className="h-16 hidden md:flex" alt="Logo" />
                 </Link>
-                
+
                 {/* Let's make a Hamburger for Mobile View */}
                 <button
                   ref={buttonRef}
@@ -108,7 +108,7 @@ function App() {
 
                 <div className="hidden md:flex gap-x-6">
                   <Link to="/" className="hover:text-indigo-400 transition-colors text-white">Home</Link>
-                  {location.pathname === "/" && ( 
+                  {location.pathname === "/" && (
                     <>
                       <a href="#tools" className="hover:text-indigo-400 transition-colors text-white">Tools</a>
                       <a href="#support" className="hover:text-indigo-400 transition-colors text-white">Fuel my Rocket</a>
@@ -128,7 +128,7 @@ function App() {
                 <div ref={dropdownRef} className="absolute top-16 left-0 w-full bg-slate-600 md:hidden shadow-lg">
                   <div className="flex flex-col items-center space-y-4 py-4 font-semibold">
                     <Link to="/" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>Home</Link>
-                    {location.pathname === "/" && ( 
+                    {location.pathname === "/" && (
                       <>
                         <a href="#tools" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>Tools</a>
                         <a href="#support" className="hover:text-indigo-400 transition-colors text-white" onClick={() => setIsDropdownOpen(false)}>Fuel my Rocket</a>
@@ -140,7 +140,7 @@ function App() {
                 </div>
               )}
             </nav>
-            
+
             <div className="pt-20">
               <Routes>
                 <Route path="/" element={<Home />} />
