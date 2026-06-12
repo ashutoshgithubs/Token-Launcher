@@ -10,6 +10,7 @@ import { createInitializeInstruction,pack } from '@solana/spl-token-metadata';
 import { RxCross2 } from "react-icons/rx";
 import { UploadClient } from "@uploadcare/upload-client";
 import { FaSpinner } from 'react-icons/fa';
+import { buildTokenMetadata } from '@/lib/tokenMetadata';
 
 
 
@@ -67,12 +68,9 @@ export default function GenerateToken() {
   };
 
   const createAndUploadMetadata = async (name, symbol, description, imageUrl) => {
-    const metadata = JSON.stringify({
-        name,
-        symbol,
-        description,
-        image: imageUrl,
-    });
+    const metadata = JSON.stringify(
+      buildTokenMetadata({ name, symbol, description, image: imageUrl })
+    );
 
     const metadataFile = new File([metadata], "metadata.json", { type: "application/json" });
 
@@ -98,7 +96,7 @@ export default function GenerateToken() {
     try {
       setBtnText("Creating...")
       const mintKeypair = Keypair.generate();
-      let metadataUri = await createAndUploadMetadata(name, symbol, decimals, image);
+      let metadataUri = await createAndUploadMetadata(name, symbol, description, image);
     // console.log(metadataUri);
 
       if (!metadataUri) {
