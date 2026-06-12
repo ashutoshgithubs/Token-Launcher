@@ -8,6 +8,7 @@ import { Input } from "./ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Label } from "./ui/label"
 import { toast } from '@/hooks/use-toast'
+import { parseSolAmount } from '@/lib/solAmount'
 
 
 export default function LaunchFuel() {
@@ -48,9 +49,9 @@ export default function LaunchFuel() {
         })
         return
       }
-    const enteredAmount = parseFloat(amount)
+    const enteredAmount = parseSolAmount(amount)
 
-    if (!amount || isNaN(enteredAmount) || enteredAmount <= 0) {
+    if (enteredAmount === null) {
       toast({
         title: "Invalid amount",
         description: "Please enter a valid amount greater than 0.",
@@ -67,13 +68,13 @@ export default function LaunchFuel() {
       })
       return
     }
-    
-  
+
+
       const transaction = new Transaction();
       transaction.add(SystemProgram.transfer({
         fromPubkey: wallet.publicKey,
         toPubkey: new PublicKey(Recipientaddress),
-        lamports: amount * LAMPORTS_PER_SOL,
+        lamports: enteredAmount * LAMPORTS_PER_SOL,
     }));
 
 

@@ -9,6 +9,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { useNavigate } from 'react-router-dom'
 import { TiArrowBack } from "react-icons/ti";
+import { parseSolAmount } from '@/lib/solAmount';
 
 export default function Airdrop() {
     const navigate = useNavigate();
@@ -50,9 +51,19 @@ export default function Airdrop() {
         return;
       }
 
+      const solAmount = parseSolAmount(amount);
+      if (solAmount === null) {
+        toast({
+          title: "Invalid amount",
+          description: "Please enter a valid positive SOL amount.",
+          variant: "destructive",
+        });
+        return;
+      }
+
       try {
         setLoading(true);
-        await connection.requestAirdrop(wallet.publicKey, amount * LAMPORTS_PER_SOL);
+        await connection.requestAirdrop(wallet.publicKey, solAmount * LAMPORTS_PER_SOL);
 
         toast({
           title: "Airdrop Initiated",
