@@ -9,6 +9,7 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { Transaction,SystemProgram, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js"
 import { useNavigate } from "react-router-dom"
 import { TiArrowBack } from "react-icons/ti"
+import { parseSolAmount } from "@/lib/solAmount"
 
 export default function Send() {
   const [Recipientaddress, setRecipientAddress] = useState("")
@@ -48,11 +49,20 @@ export default function Send() {
       })
       return
     }
+    const solAmount = parseSolAmount(amount);
+    if (solAmount === null) {
+      toast({
+        title: "Invalid amount",
+        description: "Please enter a valid positive SOL amount.",
+        variant: "destructive",
+      });
+      return;
+    }
     const transaction = new Transaction();
     transaction.add(SystemProgram.transfer({
       fromPubkey: wallet.publicKey,
       toPubkey: new PublicKey(Recipientaddress),
-      lamports: amount * LAMPORTS_PER_SOL,
+      lamports: solAmount * LAMPORTS_PER_SOL,
   }));
   try{
     setLoading(true);
