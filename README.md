@@ -68,26 +68,14 @@ npm run dev
 ## 🤝 Contributing
 We welcome contributions from everyone! 💙
 
-### Steps to Contribute:
+For setup, scripts, branch / PR conventions, and how to write tests,
+please read [CONTRIBUTING.md](./CONTRIBUTING.md). The short version:
+
 1. Fork the repository
-
-2. Create a new branch
-```bash
-git checkout -b feature/your-feature-name
-```
+2. Create a branch named `issue-<number>` matching the upstream issue
 3. Make your changes
-
-4. Commit your changes
-```bash
-git commit -m "Add your message"
-```
-
-5. Push to your branch
-```bash
-git push origin feature/your-feature-name
-```
-
-6. Open a Pull Request 🚀
+4. Run `npm test`, `npm run lint`, and `npm run build` locally
+5. Open a Pull Request with `Closes #<number>` in the body
 
 
 ---
