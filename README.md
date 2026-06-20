@@ -49,7 +49,7 @@ cd Token-Launcher
 
 ### 2. Install Dependencies
 ```bash
-npm install 
+npm install
 ```
 
 ### 3.
